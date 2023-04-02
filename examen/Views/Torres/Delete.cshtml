@@ -1,0 +1,28 @@
+﻿@model examen.Models.Torre
+
+@{
+    ViewData["Title"] = "Eliminar";
+    ViewData["Module"] = "Torres";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Seguro que desea eliminar?</h3>
+<div>
+    <h4>@ViewData["Module"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Zone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Zone)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TorreId" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

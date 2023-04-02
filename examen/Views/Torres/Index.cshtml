@@ -1,0 +1,36 @@
+﻿@model IEnumerable<examen.Models.Torre>
+
+@{
+    ViewData["Title"] = "Inicio";
+    ViewData["Module"] = "Torres";
+}
+
+<h1>@ViewData["Title"] </h1>
+
+<p>
+    <a asp-action="Create">Agregar nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Zone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TorreId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.TorreId">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.TorreId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

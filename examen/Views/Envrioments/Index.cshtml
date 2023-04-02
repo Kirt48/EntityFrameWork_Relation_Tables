@@ -1,0 +1,55 @@
+﻿@model IEnumerable<examen.Models.Envrioment>
+
+@{
+    ViewData["Title"] = "Inicio";
+    ViewData["Module"] = "Ambientes";
+
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Agregar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Floor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instructor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Torre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Floor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instructor.Document)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Torre.Zone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EnvriomentId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.EnvriomentId">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.EnvriomentId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

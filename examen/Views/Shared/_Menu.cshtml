@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="~/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">AdminLTE 3</span>
+            </a>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+
+                    <li class="nav-item">
+                        <a asp-controller="Professions" asp-action="Index" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Profesiones
+
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a asp-controller="Instructors" asp-action="Index" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Instructores
+
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a asp-controller="Envrioments" asp-action="Index" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Ambientes
+
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a asp-controller="Students" asp-action="Index" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Aprendices
+
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a asp-controller="Torres" asp-action="Index" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Torres
+
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a asp-controller="Programas" asp-action="Index" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Programa
+
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+    }
+</ul>
